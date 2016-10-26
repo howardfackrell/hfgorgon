@@ -27,6 +27,7 @@ public class Gorgon {
         add("adam");
         add("steve");
         add("cory");
+        add("kevin");
     }};
 
     List<String> adjectives =
