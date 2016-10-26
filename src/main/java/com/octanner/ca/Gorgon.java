@@ -34,6 +34,7 @@ public class Gorgon {
                 add("happy");
                 add("angry");
                 add("proud");
+                add("elated");
             }};
 
 //    @Autowired
