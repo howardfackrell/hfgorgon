@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,29 +18,11 @@ public class Gorgon {
 
     Random random = new Random();
 
-    List<String> nouns =
-            new ArrayList<String>(){{
-        add("howard");
-        add("cameron");
-        add("karen");
-        add("lana");
-        add("adam");
-        add("steve");
-        add("cory");
-        add("kevin");
-    }};
+    List<String> nouns = null;
+    List<String> adjectives = null;
 
-    List<String> adjectives =
-            new ArrayList<String>() {{
-                add("shy");
-                add("happy");
-                add("angry");
-                add("proud");
-                add("elated");
-            }};
-
-//    @Autowired
-//    JdbcTemplate jdbcTemplate;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @RequestMapping("/gorgon")
     @ResponseBody
@@ -50,14 +32,14 @@ public class Gorgon {
 
     List<String> getNouns() {
         if (nouns == null) {
-//            nouns = jdbcTemplate.queryForList("select name from nouns", String.class);
+            nouns = jdbcTemplate.queryForList("select name from nouns", String.class);
         }
         return nouns;
     }
 
     List<String> getAdjectives() {
         if (adjectives == null) {
-//            adjectives = jdbcTemplate.queryForList("select name from adjectives", String.class);
+            adjectives = jdbcTemplate.queryForList("select name from adjectives", String.class);
         }
         return adjectives;
     }

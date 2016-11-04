@@ -30,8 +30,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-actuator")
 	compile('org.springframework.boot:spring-boot-devtools')
-//	compile('org.springframework.boot:spring-boot-starter-jdbc')
-//	compile('org.postgresql:postgresql:9.4.1211')
-//	compile('org.flywaydb:flyway-core:4.0.3')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.postgresql:postgresql:9.4.1211')
+	compile('org.flywaydb:flyway-core:4.0.3')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
